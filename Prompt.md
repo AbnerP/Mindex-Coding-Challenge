@@ -66,11 +66,11 @@ For the field "numberOfReports", this should equal the total number of reports u
 reports is determined to be the number of directReports for an employee and all of their direct reports. For example, 
 given the following employee structure:
 ```
-                    John Lennon
-                /               \
-         Paul McCartney         Ringo Starr
-                               /        \
-                          Pete Best     George Harrison
+            John Lennon
+        /               \
+ Paul McCartney         Ringo Starr
+                       /        \
+                  Pete Best     George Harrison
 ```
 The numberOfReports for employee John Lennon (employeeId: 16a596ae-edd3-4847-99fe-c4518e82c86f) would be equal to 4. 
 
