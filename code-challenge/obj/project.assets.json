@@ -13119,11 +13119,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge/code-challenge.csproj",
+      "projectUniqueName": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge/code-challenge.csproj",
       "projectName": "code-challenge",
-      "projectPath": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge/code-challenge.csproj",
+      "projectPath": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge/code-challenge.csproj",
       "packagesPath": "/Users/abnerpena/.nuget/packages/",
-      "outputPath": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge/obj/",
+      "outputPath": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/abnerpena/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NZKaTCO4cqfdluwQqCIlrdbisELd8XPrEyh8L1u3O5ZMYRi6fxDgNxjGi+sRU8KB2W+a4Luddb4kruCjDVD1Bg==",
+  "dgSpecHash": "GK/RTMYaRJDd+lnagHeTwRzfbI24xbUEgE6EBP+5sv7InSNBqrSveCaF4weRvdQvXs7Ty8jOZH5OxIi1m1+NjA==",
   "success": true,
-  "projectFilePath": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge.Tests/code-challenge.Tests.Integration.csproj",
+  "projectFilePath": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge.Tests/code-challenge.Tests.Integration.csproj",
   "expectedPackageFiles": [
     "/Users/abnerpena/.nuget/packages/libuv/1.10.0/libuv.1.10.0.nupkg.sha512",
     "/Users/abnerpena/.nuget/packages/microsoft.applicationinsights/2.4.0/microsoft.applicationinsights.2.4.0.nupkg.sha512",

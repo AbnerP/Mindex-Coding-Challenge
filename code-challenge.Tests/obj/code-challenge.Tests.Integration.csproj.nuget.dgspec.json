@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge.Tests/code-challenge.Tests.Integration.csproj": {}
+    "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge.Tests/code-challenge.Tests.Integration.csproj": {}
   },
   "projects": {
-    "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge.Tests/code-challenge.Tests.Integration.csproj": {
+    "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge.Tests/code-challenge.Tests.Integration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge.Tests/code-challenge.Tests.Integration.csproj",
+        "projectUniqueName": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge.Tests/code-challenge.Tests.Integration.csproj",
         "projectName": "code-challenge.Tests.Integration",
-        "projectPath": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge.Tests/code-challenge.Tests.Integration.csproj",
+        "projectPath": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge.Tests/code-challenge.Tests.Integration.csproj",
         "packagesPath": "/Users/abnerpena/.nuget/packages/",
-        "outputPath": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge.Tests/obj/",
+        "outputPath": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/abnerpena/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge/code-challenge.csproj": {
-                "projectPath": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge/code-challenge.csproj"
+              "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge/code-challenge.csproj": {
+                "projectPath": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge/code-challenge.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge/code-challenge.csproj": {
+    "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge/code-challenge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge/code-challenge.csproj",
+        "projectUniqueName": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge/code-challenge.csproj",
         "projectName": "code-challenge",
-        "projectPath": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge/code-challenge.csproj",
+        "projectPath": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge/code-challenge.csproj",
         "packagesPath": "/Users/abnerpena/.nuget/packages/",
-        "outputPath": "/Users/abnerpena/Desktop/sr-code-challenge-dotnet/code-challenge/obj/",
+        "outputPath": "/Users/abnerpena/Desktop/Mindex-Coding-Challenge/code-challenge/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/abnerpena/.nuget/NuGet/NuGet.Config"
