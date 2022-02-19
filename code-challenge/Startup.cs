@@ -12,6 +12,7 @@ using challenge.Data;
 using Microsoft.EntityFrameworkCore;
 using challenge.Repositories;
 using challenge.Services;
+using challenge.Helpers;
 
 namespace code_challenge
 {
@@ -35,6 +36,7 @@ namespace code_challenge
             services.AddTransient<EmployeeDataSeeder>();
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IReportingStructureService, ReportingStructureService>();
+            services.AddScoped<IMapper, Mapper>();
             services.AddMvc();
         }
 

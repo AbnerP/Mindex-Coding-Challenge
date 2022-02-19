@@ -6,6 +6,7 @@ using challenge.DTO;
 using challenge.Models;
 using Microsoft.Extensions.Logging;
 using challenge.Repositories;
+using challenge.Helpers;
 
 namespace challenge.Services
 {
@@ -13,11 +14,13 @@ namespace challenge.Services
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly ILogger<EmployeeService> _logger;
+        private readonly IMapper _mapper;
 
-        public EmployeeService(ILogger<EmployeeService> logger, IEmployeeRepository employeeRepository)
+        public EmployeeService(ILogger<EmployeeService> logger, IEmployeeRepository employeeRepository, IMapper mapper)
         {
             _employeeRepository = employeeRepository;
             _logger = logger;
+            _mapper = mapper;
         }
 
         public Employee Create(EmployeeDto employeeDto)
@@ -25,7 +28,8 @@ namespace challenge.Services
             Employee newEmployee = null;
             if(employeeDto != null)
             {
-                newEmployee = _employeeRepository.Add(MapEmployeeDtoToEmployee(employeeDto));
+                // Converts String EmployeeIDs in DTO to Employee Objects
+                newEmployee = _employeeRepository.Add(_mapper.EmployeeDto_To_Employee(employeeDto));
                 _employeeRepository.SaveAsync().Wait();
             }
 
@@ -62,24 +66,5 @@ namespace challenge.Services
             return newEmployee;
         }
         
-        private Employee MapEmployeeDtoToEmployee(EmployeeDto employeeDto)
-        {
-            List<Employee> directReports = new List<Employee>(employeeDto.DirectReports.Count);
-            foreach (var employeeId in employeeDto.DirectReports)
-            {
-                var employeeRef = _employeeRepository.GetById(employeeId);
-                if(employeeRef != null)
-                    directReports.Add(employeeRef);
-            }
-
-            return new Employee()
-            {
-                FirstName = employeeDto.FirstName,
-                LastName = employeeDto.LastName,
-                Position = employeeDto.Position,
-                Department = employeeDto.Department,
-                DirectReports = directReports
-            };
-        }
     }
 }

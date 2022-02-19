@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using challenge.Repositories;
 using challenge.Services;
 using challenge.Controllers;
+using challenge.Helpers;
 
 namespace code_challenge.Tests.Integration
 {
@@ -30,6 +31,8 @@ namespace code_challenge.Tests.Integration
             services.AddScoped<IEmployeeRepository,EmployeeRespository>();
             services.AddTransient<EmployeeDataSeeder>();
             services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IReportingStructureService, ReportingStructureService>();
+            services.AddScoped<IMapper, Mapper>();
             services.AddMvc();
         }
 
