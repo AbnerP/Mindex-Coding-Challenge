@@ -21,12 +21,28 @@ namespace challenge.Services
         
         public ReportingStructure Create(string id)
         {
-            Employee e = _employeeService.GetById(id);
+            var parentEmployee = _employeeService.GetById(id);
+
+            var reportsCount = GetReportingCount(parentEmployee);
+            
             return new ReportingStructure()
             {  
-                ParentEmployee = e,
-                NumberOfReports = 0
+                NumberOfReports = reportsCount,
+                Manager = parentEmployee
             };
+        }
+
+        private int GetReportingCount(Employee e)
+        {
+            int directReportsCount = e.DirectReports.Count;
+            
+            foreach (var employeeRef in e.DirectReports)
+            {
+                Employee employee = _employeeService.GetById(employeeRef.EmployeeId);
+                directReportsCount += GetReportingCount(employee);
+            }
+            
+            return directReportsCount;
         }
         
     }
