@@ -21,14 +21,18 @@ namespace challenge.Services
         
         public ReportingStructure Create(string id)
         {
-            var parentEmployee = _employeeService.GetById(id);
-
-            var reportsCount = GetReportingCount(parentEmployee);
+            var manager = _employeeService.GetById(id);
+            
+            // Return null if no employee found
+            if (manager == null) return null;
+            
+            // Recursively Calculates Direct Reports Count
+            var reportsCount = GetReportingCount(manager);
             
             return new ReportingStructure()
             {  
                 NumberOfReports = reportsCount,
-                Manager = parentEmployee
+                Manager = manager
             };
         }
 
@@ -38,7 +42,10 @@ namespace challenge.Services
             
             foreach (var employeeRef in e.DirectReports)
             {
+                // Get employee with DirectReports references
                 Employee employee = _employeeService.GetById(employeeRef.EmployeeId);
+                
+                // Recursive Call to add DirectReports of child
                 directReportsCount += GetReportingCount(employee);
             }
             
