@@ -11,9 +11,9 @@ namespace challenge.Services
     public class ReportingStructureService : IReportingStructureService
     {
         private readonly IEmployeeService _employeeService;
-        private readonly ILogger<EmployeeService> _logger;
+        private readonly ILogger<ReportingStructureService> _logger;
 
-        public ReportingStructureService(ILogger<EmployeeService> logger, IEmployeeService employeeService)
+        public ReportingStructureService(ILogger<ReportingStructureService> logger, IEmployeeService employeeService)
         {
             _employeeService = employeeService;
             _logger = logger;
