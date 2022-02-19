@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using challenge.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using challenge.Services;
@@ -22,13 +23,13 @@ namespace challenge.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateEmployee([FromBody] Employee employee)
+        public IActionResult CreateEmployee([FromBody] EmployeeDto employee)
         {
             _logger.LogDebug($"Received employee create request for '{employee.FirstName} {employee.LastName}'");
 
-            _employeeService.Create(employee);
+            Employee newEmployee = _employeeService.Create(employee);
 
-            return CreatedAtRoute("getEmployeeById", new { id = employee.EmployeeId }, employee);
+            return CreatedAtRoute("getEmployeeById", new { id = newEmployee.EmployeeId }, newEmployee);
         }
 
         [HttpGet("{id}", Name = "getEmployeeById")]

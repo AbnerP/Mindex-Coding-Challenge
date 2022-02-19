@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using challenge.DTO;
 using challenge.Models;
 using Microsoft.Extensions.Logging;
 using challenge.Repositories;
@@ -19,15 +20,16 @@ namespace challenge.Services
             _logger = logger;
         }
 
-        public Employee Create(Employee employee)
+        public Employee Create(EmployeeDto employeeDto)
         {
-            if(employee != null)
+            Employee newEmployee = null;
+            if(employeeDto != null)
             {
-                _employeeRepository.Add(employee);
+                newEmployee = _employeeRepository.Add(MapEmployeeDtoToEmployee(employeeDto));
                 _employeeRepository.SaveAsync().Wait();
             }
 
-            return employee;
+            return newEmployee;
         }
 
         public Employee GetById(string id)
@@ -58,6 +60,26 @@ namespace challenge.Services
             }
 
             return newEmployee;
+        }
+        
+        private Employee MapEmployeeDtoToEmployee(EmployeeDto employeeDto)
+        {
+            List<Employee> directReports = new List<Employee>(employeeDto.DirectReports.Count);
+            foreach (var employeeId in employeeDto.DirectReports)
+            {
+                var employeeRef = _employeeRepository.GetById(employeeId);
+                if(employeeRef != null)
+                    directReports.Add(employeeRef);
+            }
+
+            return new Employee()
+            {
+                FirstName = employeeDto.FirstName,
+                LastName = employeeDto.LastName,
+                Position = employeeDto.Position,
+                Department = employeeDto.Department,
+                DirectReports = directReports
+            };
         }
     }
 }
