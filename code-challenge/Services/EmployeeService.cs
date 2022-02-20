@@ -25,15 +25,15 @@ namespace challenge.Services
 
         public Employee Create(EmployeeDto employeeDto)
         {
-            Employee newEmployee = null;
             if(employeeDto != null)
             {
                 // Converts String EmployeeIDs in DTO to Employee Objects
-                newEmployee = _employeeRepository.Add(_mapper.EmployeeDto_To_Employee(employeeDto));
+                var newEmployee = _employeeRepository.Add(_mapper.EmployeeDto_To_Employee(employeeDto));
                 _employeeRepository.SaveAsync().Wait();
+                return newEmployee;
             }
 
-            return newEmployee;
+            return null;
         }
 
         public Employee GetById(string id)

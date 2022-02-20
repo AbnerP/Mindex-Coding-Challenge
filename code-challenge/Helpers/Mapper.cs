@@ -52,5 +52,17 @@ namespace challenge.Helpers
             
             return newEmployee;
         }
+
+        public Compensation CompensationDto_To_Compensation(CompensationDto compensationDto) 
+        {
+            var employee = _employeeRepository.GetById(compensationDto.EmployeeID);
+            if (employee == null) return null;
+                
+            return new Compensation() {
+                Employee = employee,
+                EffectiveDate = compensationDto.EffectiveDate,
+                Salary = compensationDto.Salary
+            };
+        }
     }
 }
